@@ -1071,4 +1071,37 @@ public class SoftKeyboard extends InputMethodService
     public void clearCandidateView() {
         if (list != null) list.clear();
     }
+public String reshapeAndReverse(String text) {
+    StringBuilder reshaped = new StringBuilder();
+    for (char ch : text.toCharArray()) {
+        char glyph = ch;
+        switch (ch) {
+            case 'ب': glyph = 'ﺏ'; break;
+            case 'ت': glyph = 'ﺕ'; break;
+            case 'ث': glyph = 'ﺙ'; break;
+            case 'ج': glyph = 'ﺝ'; break;
+            case 'ح': glyph = 'ﺡ'; break;
+            case 'خ': glyph = 'ﺥ'; break;
+            case 'س': glyph = 'ﺱ'; break;
+            case 'ش': glyph = 'ﺵ'; break;
+            case 'ص': glyph = 'ﺹ'; break;
+            case 'ض': glyph = 'ﺽ'; break;
+            case 'ط': glyph = 'ﻁ'; break;
+            case 'ظ': glyph = 'ﻅ'; break;
+            case 'ع': glyph = 'ﻉ'; break;
+            case 'غ': glyph = 'ﻍ'; break;
+            case 'ف': glyph = 'ﻑ'; break;
+            case 'ق': glyph = 'ﻕ'; break;
+            case 'ك': glyph = 'ﻙ'; break;
+            case 'ل': glyph = 'ﻝ'; break;
+            case 'م': glyph = 'ﻡ'; break;
+            case 'ن': glyph = 'ﻥ'; break;
+            case 'ه': glyph = 'ﻩ'; break;
+            case 'و': glyph = 'ﻭ'; break;
+            case 'ي': glyph = 'ﻱ'; break;
+        }
+        reshaped.append(glyph);
+    }
+    return reshaped.reverse().toString();
+}
 }
